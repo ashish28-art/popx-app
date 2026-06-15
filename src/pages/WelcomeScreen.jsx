@@ -1,20 +1,76 @@
 function WelcomeScreen({ navigate }) {
   return (
-    <div className="bg-[#f5f5f5] rounded-2xl w-[480px] min-h-[580px] shadow-lg flex flex-col justify-end p-8">
+    <div
+      style={{
+        backgroundColor: '#ffffff',
+        borderRadius: '12px',
+        width: '390px',
+        minHeight: '600px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        padding: '40px 28px',
+      }}
+    >
+      {/* Text content at bottom */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-3">Welcome to PopX</h1>
-        <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-          Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit.
+        <h1
+          style={{
+            fontSize: '28px',
+            fontWeight: '700',
+            color: '#1a1a1a',
+            marginBottom: '10px',
+            lineHeight: '1.2',
+          }}
+        >
+          Welcome to PopX
+        </h1>
+        <p
+          style={{
+            fontSize: '15px',
+            color: '#7a7a7a',
+            marginBottom: '32px',
+            lineHeight: '1.5',
+          }}
+        >
+          Lorem ipsum dolor sit amet,<br />
+          consectetur adipiscing elit.
         </p>
+
+        {/* Create Account - solid purple */}
         <button
           onClick={() => navigate('create-account')}
-          className="w-full py-4 rounded-lg text-white font-semibold text-base mb-3 bg-[#6c35de] hover:bg-[#5a2bc4] transition-colors"
+          style={{
+            width: '100%',
+            padding: '16px',
+            backgroundColor: '#6c35de',
+            color: '#ffffff',
+            fontWeight: '600',
+            fontSize: '15px',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            marginBottom: '12px',
+          }}
         >
           Create Account
         </button>
+
+        {/* Login - light purple */}
         <button
           onClick={() => navigate('signin')}
-          className="w-full py-4 rounded-lg font-semibold text-gray-700 text-base bg-[#d8cff0] hover:bg-[#c9bde8] transition-colors"
+          style={{
+            width: '100%',
+            padding: '16px',
+            backgroundColor: '#c5b8f0',
+            color: '#3a3a3a',
+            fontWeight: '600',
+            fontSize: '15px',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+          }}
         >
           Already Registered? Login
         </button>
