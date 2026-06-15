@@ -9,16 +9,16 @@ function App() {
 
   const renderScreen = () => {
     switch (screen) {
-      case 'welcome': return <WelcomeScreen navigate={setScreen} />
-      case 'signin': return <SigninScreen navigate={setScreen} />
-      case 'create-account': return <CreateAccountScreen navigate={setScreen} />
-      case 'account-settings': return <AccountSettingsScreen navigate={setScreen} />
-      default: return <WelcomeScreen navigate={setScreen} />
+      case 'welcome':         return <WelcomeScreen navigate={setScreen} />
+      case 'signin':          return <SigninScreen navigate={setScreen} />
+      case 'create-account':  return <CreateAccountScreen navigate={setScreen} />
+      case 'account-settings':return <AccountSettingsScreen />
+      default:                return <WelcomeScreen navigate={setScreen} />
     }
   }
 
   return (
-    <div className="min-h-screen bg-[#e0dede] flex items-center justify-center p-5">
+    <div style={{ backgroundColor: '#cbcbcb', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       {renderScreen()}
     </div>
   )
