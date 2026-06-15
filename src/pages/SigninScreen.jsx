@@ -5,48 +5,127 @@ function SigninScreen({ navigate }) {
   const [password, setPassword] = useState('')
 
   return (
-    <div className="bg-[#f5f5f5] rounded-2xl w-[480px] min-h-[580px] shadow-lg flex flex-col p-8">
-      <div className="mt-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-          Signin to your<br />PopX account
-        </h1>
-        <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-          Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,
-        </p>
+    <div
+      style={{
+        backgroundColor: '#ffffff',
+        borderRadius: '12px',
+        width: '390px',
+        minHeight: '600px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '40px 28px',
+      }}
+    >
+      <h1
+        style={{
+          fontSize: '28px',
+          fontWeight: '700',
+          color: '#1a1a1a',
+          marginBottom: '10px',
+          lineHeight: '1.25',
+        }}
+      >
+        Signin to your<br />PopX account
+      </h1>
 
-        <div className="mb-5">
-          <label className="block text-xs font-semibold mb-1 text-[#6c35de]">
-            Email Address
-          </label>
-          <input
-            type="email"
-            placeholder="Enter email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 outline-none focus:border-[#6c35de] bg-[#f5f5f5]"
-          />
-        </div>
+      <p
+        style={{
+          fontSize: '15px',
+          color: '#7a7a7a',
+          marginBottom: '32px',
+          lineHeight: '1.5',
+        }}
+      >
+        Lorem ipsum dolor sit amet,<br />
+        consectetur adipiscing elit,
+      </p>
 
-        <div className="mb-8">
-          <label className="block text-xs font-semibold mb-1 text-[#6c35de]">
-            Password
-          </label>
-          <input
-            type="password"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 outline-none focus:border-[#6c35de] bg-[#f5f5f5]"
-          />
-        </div>
-
-        <button
-          onClick={() => navigate('account-settings')}
-          className="w-full py-4 rounded-lg text-white font-semibold text-base bg-[#9e9e9e] hover:bg-[#888] transition-colors"
+      {/* Email Field */}
+      <div style={{ marginBottom: '20px', position: 'relative' }}>
+        <label
+          style={{
+            position: 'absolute',
+            top: '-9px',
+            left: '12px',
+            backgroundColor: '#ffffff',
+            padding: '0 4px',
+            fontSize: '12px',
+            fontWeight: '600',
+            color: '#6c35de',
+          }}
         >
-          Login
-        </button>
+          Email Address
+        </label>
+        <input
+          type="email"
+          placeholder="Enter email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={{
+            width: '100%',
+            border: '1.5px solid #c0c0c0',
+            borderRadius: '8px',
+            padding: '14px 14px',
+            fontSize: '14px',
+            color: '#555',
+            outline: 'none',
+            backgroundColor: '#ffffff',
+          }}
+        />
       </div>
+
+      {/* Password Field */}
+      <div style={{ marginBottom: '32px', position: 'relative' }}>
+        <label
+          style={{
+            position: 'absolute',
+            top: '-9px',
+            left: '12px',
+            backgroundColor: '#ffffff',
+            padding: '0 4px',
+            fontSize: '12px',
+            fontWeight: '600',
+            color: '#6c35de',
+          }}
+        >
+          Password
+        </label>
+        <input
+          type="password"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={{
+            width: '100%',
+            border: '1.5px solid #c0c0c0',
+            borderRadius: '8px',
+            padding: '14px 14px',
+            fontSize: '14px',
+            color: '#555',
+            outline: 'none',
+            backgroundColor: '#ffffff',
+          }}
+        />
+      </div>
+
+      {/* Login Button - grey when empty */}
+      <button
+        onClick={() => navigate('account-settings')}
+        style={{
+          width: '100%',
+          padding: '16px',
+          backgroundColor: '#b0b0b0',
+          color: '#ffffff',
+          fontWeight: '600',
+          fontSize: '15px',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+        }}
+      >
+        Login
+      </button>
     </div>
   )
 }
