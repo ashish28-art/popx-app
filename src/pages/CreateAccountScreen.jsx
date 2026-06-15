@@ -16,62 +16,118 @@ function CreateAccountScreen({ navigate }) {
   }
 
   const fields = [
-    { label: 'Full Name*', name: 'fullName', placeholder: 'Enter full name', type: 'text' },
-    { label: 'Phone number*', name: 'phone', placeholder: 'Enter phone number', type: 'tel' },
-    { label: 'Email address*', name: 'email', placeholder: 'Enter email address', type: 'email' },
-    { label: 'Password*', name: 'password', placeholder: 'Enter password', type: 'password' },
-    { label: 'Company name', name: 'company', placeholder: 'Enter company name', type: 'text' },
+    { label: 'Full Name*',      name: 'fullName',  placeholder: 'Enter full name',      type: 'text'     },
+    { label: 'Phone number*',   name: 'phone',     placeholder: 'Enter phone number',   type: 'tel'      },
+    { label: 'Email address*',  name: 'email',     placeholder: 'Enter email address',  type: 'email'    },
+    { label: 'Password*',       name: 'password',  placeholder: 'Enter password',       type: 'password' },
+    { label: 'Company name',    name: 'company',   placeholder: 'Enter company name',   type: 'text'     },
   ]
 
   return (
-    <div className="bg-[#f5f5f5] rounded-2xl w-[480px] shadow-lg flex flex-col p-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6 leading-tight mt-4">
+    <div
+      style={{
+        backgroundColor: '#ffffff',
+        borderRadius: '12px',
+        width: '390px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '40px 28px',
+      }}
+    >
+      <h1
+        style={{
+          fontSize: '28px',
+          fontWeight: '700',
+          color: '#1a1a1a',
+          marginBottom: '28px',
+          lineHeight: '1.25',
+        }}
+      >
         Create your PopX<br />account
       </h1>
 
       {fields.map(({ label, name, placeholder, type }) => (
-        <div className="mb-4" key={name}>
-          <label className="block text-xs font-semibold mb-1 text-[#6c35de]">{label}</label>
+        <div key={name} style={{ marginBottom: '20px', position: 'relative' }}>
+          <label
+            style={{
+              position: 'absolute',
+              top: '-9px',
+              left: '12px',
+              backgroundColor: '#ffffff',
+              padding: '0 4px',
+              fontSize: '12px',
+              fontWeight: '600',
+              color: '#6c35de',
+            }}
+          >
+            {label}
+          </label>
           <input
             type={type}
             name={name}
             placeholder={placeholder}
             value={formData[name]}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 outline-none focus:border-[#6c35de] bg-[#f5f5f5]"
+            style={{
+              width: '100%',
+              border: '1.5px solid #c0c0c0',
+              borderRadius: '8px',
+              padding: '14px 14px',
+              fontSize: '14px',
+              color: '#555',
+              outline: 'none',
+              backgroundColor: '#ffffff',
+            }}
           />
         </div>
       ))}
 
-      <div className="mb-6">
-        <p className="text-sm font-semibold text-gray-800 mb-2">Are you an Agency?*</p>
-        <div className="flex gap-6">
-          <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+      {/* Agency Radio */}
+      <div style={{ marginBottom: '28px', marginTop: '4px' }}>
+        <p style={{ fontSize: '14px', fontWeight: '500', color: '#1a1a1a', marginBottom: '10px' }}>
+          Are you an Agency?*
+        </p>
+        <div style={{ display: 'flex', gap: '28px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#444', cursor: 'pointer' }}>
             <input
               type="radio"
               name="isAgency"
               value="yes"
               checked={formData.isAgency === 'yes'}
               onChange={handleChange}
+              style={{ accentColor: '#6c35de', width: '16px', height: '16px' }}
             />
             Yes
           </label>
-          <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#444', cursor: 'pointer' }}>
             <input
               type="radio"
               name="isAgency"
               value="no"
               checked={formData.isAgency === 'no'}
               onChange={handleChange}
+              style={{ accentColor: '#6c35de', width: '16px', height: '16px' }}
             />
             No
           </label>
         </div>
       </div>
 
+      {/* Create Account Button */}
       <button
         onClick={() => navigate('account-settings')}
-        className="w-full py-4 rounded-lg text-white font-semibold text-base bg-[#6c35de] hover:bg-[#5a2bc4] transition-colors"
+        style={{
+          width: '100%',
+          padding: '16px',
+          backgroundColor: '#6c35de',
+          color: '#ffffff',
+          fontWeight: '600',
+          fontSize: '15px',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+        }}
       >
         Create Account
       </button>
